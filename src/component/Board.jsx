@@ -39,7 +39,7 @@ const Board = () => {
   };
 
   const playAgainButtonClicked = () => {
-    setState([]);
+    setState(Array(9).fill(null));
   };
 
   const isWinner = checkWinner();
