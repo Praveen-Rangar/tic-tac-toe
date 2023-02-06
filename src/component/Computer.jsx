@@ -81,6 +81,9 @@ const Computer = () => {
   }, [squares]);
 
   function handleClicked(index) {
+    if (squares[index] !== null) {
+      return;
+    }
     const isPlayerTurn =
       squares.filter((square) => square !== null).length % 2 === 0;
     if (isPlayerTurn) {
