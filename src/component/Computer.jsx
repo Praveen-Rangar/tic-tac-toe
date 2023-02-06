@@ -91,7 +91,8 @@ const Computer = () => {
   }
 
   const newGame = () => {
-    setSquares(Array(9).fill(0));
+    setSquares(Array(9).fill(null));
+    setWinner(null);
   };
   return (
     <>
