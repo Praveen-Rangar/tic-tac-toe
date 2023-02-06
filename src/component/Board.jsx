@@ -48,10 +48,6 @@ const Board = () => {
   //   setState(Array(9).fill(null));
   // }
 
-  const newGame = () => {
-    setState(Array(9).fill(null));
-  };
-
   return (
     <>
       <div className="main w-96">

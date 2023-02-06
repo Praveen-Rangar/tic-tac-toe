@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ComputerSquare from "./ComputerSquare";
 
-const defaultSquares = () => new Array(9).fill(null);
-
 const lines = [
   [0, 1, 2],
   [3, 4, 5],
@@ -18,7 +16,7 @@ const Computer = () => {
   const borderRowClass =
     "board-row board-row flex  justify-evenly items-center";
 
-  const [squares, setSquares] = useState(defaultSquares());
+  const [squares, setSquares] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
 
   useEffect(() => {
@@ -92,11 +90,15 @@ const Computer = () => {
     }
   }
 
+  const newGame = () => {
+    setSquares(Array(9).fill(0));
+  };
   return (
     <>
       <div className="main w-96">
         <div className="flex justify-between">
           <button
+            onClick={newGame}
             type="button"
             className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           >
